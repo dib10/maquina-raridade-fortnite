@@ -15,8 +15,6 @@ armas = {
     "Canhão de Mão": ["comum","incomum","rara","épica","lendária"]
 }
 
-
-
 def maquina_sortida():
     item = random.choice(list(armas.keys()))
     raridade = random.choice(armas[item])
@@ -39,12 +37,16 @@ def tratar_cores_raridade(raridade):
 
 print(logo)
 print("Bem vindo à máquina aleatória do fortnite")
-
+ouro = 5000
 while True:
+    print(f"Você possui \033[33m{ouro}\033[0m de ouro")
     print("Deseja comprar um item aleatório? (s/n)")
     resposta = input().lower()
     if resposta == "s":
+        if ouro>=100:
+            ouro-=100
         maquina_sortida()
     else:
         break
+print("Seu Ouro acabou!")
 
