@@ -1,5 +1,5 @@
 import random
-
+from art import logo
 
 armas = {
     "Espingarda guardião do portão": ["comum","incomum","rara","épica","lendária"],
@@ -14,8 +14,7 @@ armas = {
     "Pistola Sentinela": ["comum","incomum","rara","épica","lendária"],
     "Canhão de Mão": ["comum","incomum","rara","épica","lendária"]
 }
-
-print("Bem vindo à Máquina de itens aleatórios do fortnite")
+print(logo)
 
 def maquina_sortida():
     item = random.choice(list(armas.keys()))
@@ -38,3 +37,5 @@ def tratar_cores_raridade(raridade):
     
 
 maquina_sortida()
+
+
