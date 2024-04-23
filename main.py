@@ -14,7 +14,8 @@ armas = {
     "Pistola Sentinela": ["comum","incomum","rara","épica","lendária"],
     "Canhão de Mão": ["comum","incomum","rara","épica","lendária"]
 }
-print(logo)
+
+
 
 def maquina_sortida():
     item = random.choice(list(armas.keys()))
@@ -36,6 +37,14 @@ def tratar_cores_raridade(raridade):
         return f"\033[33m{raridade}\033[0m"  # Amarelo
     
 
-maquina_sortida()
+print(logo)
+print("Bem vindo à máquina aleatória do fortnite")
 
+while True:
+    print("Deseja comprar um item aleatório? (s/n)")
+    resposta = input().lower()
+    if resposta == "s":
+        maquina_sortida()
+    else:
+        break
 
