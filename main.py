@@ -39,4 +39,4 @@ while True:
             break
     else:
         break
-print("Obrigado por usar a máquina aleatória")
+print("\033[1;31mObrigado por usar a máquina aleatória\033[0m")
