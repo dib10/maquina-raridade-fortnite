@@ -1,7 +1,19 @@
 import random
+import os
 from art import logo
 
-armas = {
+máquina = {
+    "Grudante":["incomum"],
+    "Combustível":["comum"],
+    "Atadura":["comum"],
+    "Kit Médico":["incomum"],
+    "Poção de escudo pequena":["incomum"],
+    "maçã":["incomum"],
+    "Granada de Onda de Choque":["épica"],
+    "Cogumelo":["incomum"],
+    "Alface":["comum"],
+    "Vara de pesca":["comum"],
+    "Cura-Cura":["rara"],
     "Espingarda guardião do portão": ["comum","incomum","rara","épica","lendária"],
     "SMG Arauto": ["comum","incomum","rara","épica","lendária"],
     "Rifle A.E caçada lunar": ["comum","incomum","rara","épica","lendária"], 
@@ -16,11 +28,11 @@ armas = {
 }
 
 def maquina_sortida():
-    item = random.choice(list(armas.keys()))
-    raridade = random.choice(armas[item])
+    item = random.choice(list(máquina.keys()))
+    raridade = random.choice(máquina[item])
     raridade_colorida = tratar_cores_raridade(raridade)
 
-    print(f"Você recebeu a arma {item} de raridade {raridade_colorida}")
+    print(f"Você recebeu o item {item} de raridade {raridade_colorida}")
 
 def tratar_cores_raridade(raridade):
     if raridade == "comum":
@@ -36,17 +48,20 @@ def tratar_cores_raridade(raridade):
     
 
 print(logo)
-print("Bem vindo à máquina aleatória do fortnite")
-ouro = 5000
+print("Olá, eu sou uma máquina com defeito, você pode comprar um item aleatório por 100 de ouro!🦑")
+ouro = random.randint(1000,5000)
 while True:
     print(f"Você possui \033[33m{ouro}\033[0m de ouro")
-    print("Deseja comprar um item aleatório? (s/n)")
+    print("Deseja comprar um item aleatório? (s/n): ")
     resposta = input().lower()
     if resposta == "s":
-        if ouro>=100:
-            ouro-=100
-        maquina_sortida()
+        if ouro >= 100:
+            ouro -= 100
+            os.system('cls')  # limpar o terminal
+            maquina_sortida()
+        else:
+            print("\033[31mVocê não tem ouro suficiente!\033[0m")
+            break
     else:
         break
-print("Seu Ouro acabou!")
-
+print("Obrigado por usar a máquina aleatória")
